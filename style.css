@@ -1,0 +1,635 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a background color and font for the whole page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ecf0f1; 
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #010f1c; /* Dark Grey */
+    color: #fff;
+    padding: 1rem 5%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: goldenrod; 
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #7f8c8d; 
+}
+
+.navbar {
+    display: flex;
+    gap: 1rem;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    transform: translateY(-100%);
+    animation-delay: 1s;
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar a {
+    text-decoration: none;
+    color: cyan;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+    animation-delay: calc(var(--i) * 0.5s);
+}
+
+.navbar a:hover {
+    color: lemonchiffon;
+}
+
+/* Home section styles */
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    background: black; /* Dark Blue to Dark Grey */
+}
+
+.home-content {
+    flex: 1;
+    max-width: 60%;
+    color: #fff;
+}
+
+.intro {
+    margin-bottom: 1rem;
+}
+
+.intro h1 {
+    font-size: 3.5rem;
+}
+
+.social-media {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.2rem;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.social-media a {
+    color:rgb(63, 139, 237);
+    font-size: 2rem;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: hotpink;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background-color :rgb(63, 139, 237);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-size: 1.3rem;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Define the slideBottom animation */
+@keyframes slideBottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.btn:hover {
+    background-color: gray;
+}
+
+/* Home image */
+
+.home-img{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+
+.home-img img {
+    max-width: 35%;
+    height: auto;
+    border-radius: 50%;
+    margin-left: auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    border: 3px solid rgba(52,152,219,0.6);
+    box-shadow:  0px 0px 20px rgba(52, 152, 219, 0.6), 
+                0px 0px 40px rgba(255, 255, 255, 0.1);
+    animation: fadeIn 1s ease forwards, floatImage 4s ease-in-out infinite, rotatteGlow 6s linear infinite;
+    animation-delay: 1s, 2s , 2s;
+}
+
+@keyframes floatImage {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+@keyframes rotateGlow {
+    0% {
+        box-shadow: 0px 0px 20px rgba(52, 152, 219, 0.6), 
+                    0px 0px 40px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        box-shadow: 0px 0px 30px rgba(255, 255, 102, 0.7),  /* Yellow glow like a star */
+                    0px 0px 50px rgba(255, 255, 255, 0.3); /* Soft white glow */
+    }
+    100% {
+        box-shadow: 0px 0px 20px rgba(52, 152, 219, 0.6), 
+                    0px 0px 40px rgba(255, 255, 255, 0.1);
+    }
+}
+
+
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif;
+    font-size: x-large;
+}
+
+p {
+    line-height: 1.6;
+    font-size: x-large;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .home {
+        flex-direction: column;
+        padding: 5% 10%;
+    }
+
+    .home-content {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+.multiple-text {
+    color: hotpink;
+}
+
+
+.about {
+    padding: 5% 10%;
+    background-color: black;
+    color: #fff;
+}
+.about-photo img {
+    width: 400px; /* Adjust size as needed */
+    height: 400px; /* Ensures it's a perfect circle */
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures the image is properly cropped */
+    box-shadow: 0 0 15px rgba(0, 162, 255, 0.5); /* Optional glowing effect */
+    border: 3px solid rgba(0, 162, 255, 0.8); /* Optional border */
+}
+
+.experience-item {
+    margin-bottom: 2rem;
+    border: 0.5px solid black;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: black; /* Dark Blue */
+}
+
+.experience h2 {
+    color: rgb(10, 151, 151);
+    font-size: xx-large;
+}
+
+.experience-item h3 {
+    color: #3498db; /* Blue */
+}
+
+.experience-item h4 {
+    color: #1abc9c; /* Teal */
+}
+
+.experience-item p {
+    color: #f5f5f5;
+    margin-top: 0.5rem;
+    font-size: x-large;
+}
+
+/* Certifications section style */
+.certifications ul {
+    list-style-type: disc;
+    margin-left: 1rem;
+    color: #f5f5f5;
+    font-size: x-large;
+    margin-bottom: 2rem;
+    border: 0.5px solid rgb(0, 15, 10);
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #000509;
+}
+
+.certifications h2 {
+    color: rgb(10, 151, 151);
+    font-size: x-large;
+}
+
+/* Involvement section style */
+.leadership-section ul {
+    list-style-type: disc;
+    margin-left: 1rem;
+    color: #f5f5f5;
+    font-size: x-large;
+    margin-bottom: 2rem;
+    border: 50px solid #22303c; /* Dark Blue */
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: #01080f;
+    border: 0.5px solid rgb(0, 8, 6);
+}
+
+.leadership-section h2 {
+    color: rgb(10, 151, 151);
+    font-size: x-large;
+}
+
+.image-grid {
+    margin-top: 2rem;
+}
+
+.image-grid h2 {
+    color: rgb(10, 151, 151);
+    font-size: x-large;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border-width: 12c;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(0, 6, 6);
+}
+
+/* Education section styles */
+.education {
+    padding: 5% 10%;
+    background-color: #010913; /* Dark Grey */
+    color: #fff;
+}
+
+.education h2 {
+    font-size: xx-large;
+    color:rgb(10, 151, 151);
+    margin-bottom: 2rem;
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.education-item {
+    border: 0.5px solid aquamarine;
+    padding: 1.5rem;
+    border-radius: 5px;
+    background-color: #22303c; /* Dark Blue */
+}
+
+.education-details h2 {
+    color: #1abc9c; /* Teal */
+}
+
+.education-details h3 {
+    color: #3498db; /* Blue */
+}
+
+.education-details h5 {
+    color: #f5f5f5;
+    margin-top: 0.5rem;
+}
+
+.education-details p {
+    color: #f5f5f5;
+    margin-top: 0.25rem;
+}
+
+.education-item a i {
+    font-size: 2rem;
+    color: #1abc9c; /* Teal */
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/*skills*/
+.skills {
+    padding: 5% 10%;
+    background-color: black; /* Dark Grey */
+    color: #7f8c8d;
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: xx-large;
+    margin-bottom: 2rem;
+    text-align: left;
+    color: rgb(10, 151, 151);
+}
+
+.skill-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+    animation-delay: 1s, 2s;
+}
+
+.skill-card {
+    background-color: #22303c; /* Dark Blue */
+    padding: 1.5rem 1rem;
+    border-radius: 5px;
+    border: 0.5px solid hotpink;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background-color: rgb(30, 23, 27); /* Slightly darker Dark Blue */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2), 0px 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card i {
+    font-size: 3rem;
+    color: #1abc9c; /* Teal */
+    margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+    font-size: large;
+    color: #fff;
+}
+
+/* Projects section styles */
+.projects {
+    padding: 5% 5%;
+    background-color: #010f1d; /* Dark Grey */
+    color: #fff;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: xx-large;
+    margin-bottom: 2rem;
+    color: rgb(10, 151, 151);
+    text-align: left;
+}
+
+.project {
+    background-color: #010a12; /* Dark Blue */
+    padding: 2rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    border: 0.5px solid aquamarine;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 35px;
+    margin-bottom: 1rem;
+}
+
+.project h3 {
+    font-size: x-large;
+    color: rgb(56, 200, 152);
+    margin-bottom: 0.5rem;
+}
+
+.project p {
+    color: #f5f5f5;
+    font-size: x-large;
+    margin-bottom: 1rem;
+}
+
+.project a.btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background-color: #3498db; /* Blue */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project a.btn:hover {
+    background-color: #7f8c8d; /* Aqua Marine */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .projects {
+        padding: 5% 10%;
+    }
+
+    .project {
+        padding: 1.5rem;
+    }
+}
+
+/* Footer styles */
+
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #000103;
+    color: white;
+}
+.footer h4 {
+    font-size: medium;
+    margin: 0;
+}
+
+/* Contact section styles */
+.contact {
+    padding: 5% 10%;
+    background-color: #01070e; /* Dark Grey */
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contact h2 {
+    font-size: x-large;
+    color: rgb(10, 151, 151);
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 50%;
+}
+
+.contact-form form {
+    background-color: #22303c; /* Dark Blue */
+    padding: 1.5rem;
+    border: 0.5px solid aquamarine;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    color: aquamarine;
+    font-size: large;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 3px;
+    background-color: #f5f5f5;
+    margin-bottom: 1rem;
+    color: black;
+}
+
+.contact-form button {
+    background-color: darkcyan; /* Aqua Marine */
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: red;
+}
+
+.contact-info {
+    flex: 1;
+    max-width: 40%;
+}
+
+.contact-info p {
+    color: lavenderblush;
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-details li {
+    color: #f5f5f5;
+    font-size: large;
+    margin-bottom: 0.5rem;
+}
+
+.contact-details i {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+    color: aquamarine;
+}
+
+.contact-details a {
+    color: darkcyan; /* Blue */
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: blue; /* Aqua Marine */
+}
+
